@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: mmc-user-service
+  profiles:
+    include:
   cloud:
     consul:
       host: 106.15.47.205
@@ -25,4 +27,6 @@ management:
     web:
       exposure:
         include: "*"
+logging:
+  path: /logs
 
