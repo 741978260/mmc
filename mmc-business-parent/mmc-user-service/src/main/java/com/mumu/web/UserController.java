@@ -1,6 +1,7 @@
 package com.mumu.web;
 
 import com.mumu.client.feign.OrderClient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Author Created by Mumu
  * @Date on 2020/8/16
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -21,6 +23,6 @@ public class UserController {
     @PostMapping("/getOrderCounts")
     public void getOrderCounts(@RequestParam("userId") String userId) {
         final int orderCounts = orderClient.getOrderCounts(userId);
-        System.out.println("订单笔数：" + orderCounts);
+        log.info("订单笔数：{}", orderCounts);
     }
 }
