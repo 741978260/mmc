@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mumu.mmc</groupId>
+    <groupId>com.mumu</groupId>
     <artifactId>mmc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mmc</name>
@@ -44,6 +44,16 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <finalName>${artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <!-- 阿里云maven仓库 -->
     <repositories>

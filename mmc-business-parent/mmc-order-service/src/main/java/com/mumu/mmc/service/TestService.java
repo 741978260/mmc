@@ -11,5 +11,6 @@ import java.util.concurrent.CompletableFuture;
  */
 public interface TestService {
     CompletableFuture<TestController.UserInfo> invokeBaidu();
+
     CompletableFuture<TestController.UserInfo> invokeWeixin();
 }
