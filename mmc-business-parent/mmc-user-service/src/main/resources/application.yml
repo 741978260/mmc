@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: mmc-user-service
-  profiles:
-    include:
   cloud:
     consul:
       host: 106.15.47.205
@@ -19,6 +17,10 @@ spring:
         healthCheckTimeout: 10s
         healthCheckCriticalTimeout: 5s
         instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+  sleuth:
+    sampler:
+      # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+      probability: 1.0
 management:
   endpoint:
     health:
